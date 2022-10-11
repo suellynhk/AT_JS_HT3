@@ -34,12 +34,12 @@
 					"listen": "prerequest",
 					"script": {
 						"exec": [
-							"const token_p1 = 'pmUJSCSxkMk'\r",
-							"const token_p2 = 'AAAAAAAAAAV'\r",
-							"const token_p3 = '2zkkpx49NIu'\r",
-							"const token_p4 = '84DOXHwZmh7'\r",
-							"const token_p5 = 'peQ81oSGBsn'\r",
-							"const token_p6 = 'XNnhnWdVQ'\r",
+							"const token_p1 = 'z03OB_uTLT'\r",
+							"const token_p2 = 'wAAAAAAAAAA'\r",
+							"const token_p3 = 'SlrztyREMI'\r",
+							"const token_p4 = 'v4ReUcYIA-'\r",
+							"const token_p5 = '9k-Bnkv26UkB'\r",
+							"const token_p6 = 'ye6ghPJo1zr'\r",
 							"\r",
 							"pm.collectionVariables.set(\"refresh_token\", token_p1 + token_p2 + token_p3 + token_p4 + token_p5 + token_p6);\r",
 							"const refresh_token = pm.variables.get(\"refresh_token\");\r",
