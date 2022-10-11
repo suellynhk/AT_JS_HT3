@@ -1,0 +1,77 @@
+Iniciado pelo usuário Suellyn Harumi Kohmoto Lamann
+Rodando como SISTEMA
+Construindo no controlador no espaço de trabalho C:\Users\Suellyn\AppData\Local\Jenkins\.jenkins\workspace\Newman-Dropbox
+The recommended git tool is: NONE
+No credentials specified
+ > git.exe rev-parse --resolve-git-dir C:\Users\Suellyn\AppData\Local\Jenkins\.jenkins\workspace\Newman-Dropbox\.git # timeout=10
+Fetching changes from the remote Git repository
+ > git.exe config remote.origin.url https://github.com/suellynhk/AT_JS_HT3.git # timeout=10
+Fetching upstream changes from https://github.com/suellynhk/AT_JS_HT3.git
+ > git.exe --version # timeout=10
+ > git --version # 'git version 2.37.3.windows.1'
+ > git.exe fetch --tags --force --progress -- https://github.com/suellynhk/AT_JS_HT3.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git.exe rev-parse "refs/remotes/origin/master^{commit}" # timeout=10
+Checking out Revision 8a0f3d4ed162e6b42f486c0392a86d83f961e2b6 (refs/remotes/origin/master)
+ > git.exe config core.sparsecheckout # timeout=10
+ > git.exe checkout -f 8a0f3d4ed162e6b42f486c0392a86d83f961e2b6 # timeout=10
+Commit message: "changing variables location"
+ > git.exe rev-list --no-walk f4d7c25128c911e2df06973a450ca78c7d7166d9 # timeout=10
+[Newman-Dropbox] $ cmd /c call D:\Suellyn\temp\jenkins4288681736924303203.bat
+
+C:\Users\Suellyn\AppData\Local\Jenkins\.jenkins\workspace\Newman-Dropbox>newman run --disable-unicode C:\Jenkins\workspace\Newman-Dropbox\DropboxAPItesting_collection.json 
+newman
+
+DropboxAPI -Bearer Token
+
+Root Upload file
+  POST https://api.dropbox.com/oauth2/token?grant_type=refresh_token&refresh_token=pmUJSCSxkMkAAAAAAAAAAV2zkkpx49NIu84DOXHwZmh7peQ81oSGBsnXNnhnWdVQ&client_id=3ei3699sgjbf5a0 [200 OK, 684B, 377ms]
+  -
+  | {
+  |   access_token: 'sl.BQ8PCmfZIvUvkneZ6GW8bdtwnxFz9qjbqO
+  | PlVNxVHf_p2E-3Ul1ZNkFiYWlwtadXEMgueN-7vQBeh_UHxE_Mmx4S
+  | WvwnM6Uc1_4EIasIlTKsF3NAXkHUvJqNdfuPLGNHHgA5CY8N_cE',
+  |   token_type: 'bearer',
+  |   expires_in: 14400
+  | }
+  -
+  POST https://content.dropboxapi.com/2/files/upload?arg={ "autorename": true, "mode": "add", "mute": false, "path": "/ht2/dropbox/testing.txt", "strict_conflict": false} [200 OK, 894B, 645ms]
+  Pass  Status code is 200
+  Pass  Response informs the name of uploaded file
+  Pass  Response includes the date and hour of server modification
+
+Root Get file metadata
+  POST https://api.dropboxapi.com/2/files/get_metadata [200 OK, 818B, 269ms]
+  Pass  Status code is 200
+  Pass  Response includes id of the file
+  Pass  Response includes the file path
+
+Root Delete file
+  POST https://api.dropboxapi.com/2/files/delete_v2 [200 OK, 833B, 879ms]
+  Pass  Status code is 200
+  Pass  Response includes the date and hour of server modification
+
+Root Check if file was deleted
+  POST https://api.dropboxapi.com/2/files/get_metadata [200 OK, 549B, 498ms]
+  Pass  Status code is 200
+  Pass  Tag 'deleted' is displayed
+
+----------------------------------------------------------------------
+|                         |            executed |             failed |
+--------------------------+---------------------+---------------------
+|              iterations |                   1 |                  0 |
+--------------------------+---------------------+---------------------
+|                requests |                   5 |                  0 |
+--------------------------+---------------------+---------------------
+|            test-scripts |                   8 |                  0 |
+--------------------------+---------------------+---------------------
+|      prerequest-scripts |                   5 |                  0 |
+--------------------------+---------------------+---------------------
+|              assertions |                  10 |                  0 |
+----------------------------------------------------------------------
+| total run duration: 3.2s                                           |
+----------------------------------------------------------------------
+| total data received: 1.53kB (approx)                               |
+----------------------------------------------------------------------
+| average response time: 533ms [min: 269ms, max: 879ms, s.d.: 213ms] |
+----------------------------------------------------------------------
+Finished: SUCCESS
