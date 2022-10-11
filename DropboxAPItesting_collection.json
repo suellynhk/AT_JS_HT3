@@ -41,9 +41,9 @@
 							"const token_p5 = 'peQ81oSGBsn'\r",
 							"const token_p6 = 'XNnhnWdVQ'\r",
 							"\r",
-							"pm.globals.set(\"refresh_token\", token_p1 + token_p2 + token_p3 + token_p4 + token_p5 + token_p6);\r",
-							"const refresh_token = pm.globals.get(\"refresh_token\");\r",
-							"const client_id = '3ei3699sgjbf5a0';\r",
+							"pm.collectionVariables.set(\"refresh_token\", token_p1 + token_p2 + token_p3 + token_p4 + token_p5 + token_p6);\r",
+							"const refresh_token = pm.variables.get(\"refresh_token\");\r",
+							"const client_id = pm.variables.get(\"client_id\");\r",
 							"\r",
 							"const urlRef = `https://api.dropbox.com/oauth2/token?grant_type=refresh_token&refresh_token=${refresh_token}&client_id=${client_id}`\r",
 							"const postRequest = {\r",
@@ -54,7 +54,6 @@
 							"  }\r",
 							"};\r",
 							"pm.sendRequest(postRequest, (error, response) => {\r",
-							"  console.log(error ? error : response.json())\r",
 							"  const { access_token } = response.json();\r",
 							"  pm.globals.set(\"access_token\", access_token);\r",
 							"});"
@@ -296,6 +295,10 @@
 			"key": "client_id",
 			"value": "3ei3699sgjbf5a0",
 			"type": "string"
+		},
+		{
+			"key": "refresh_token",
+			"value": ""
 		}
 	]
 }
