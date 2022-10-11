@@ -32,4 +32,4 @@ Integrating Postman with Jenkins(CI) using Newman and Github.
 
 - Jenkins 2.361.2
 
-- Postman(desktop)
+- Postman (desktop)
